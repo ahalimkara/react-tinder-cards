@@ -12,6 +12,17 @@ body {
   overflow: hidden;
 }
 
+.logo {
+  display: block;
+  margin: 30px auto;
+  width: 200px;
+}
+
+.cards {
+  position: relative;
+  height: 650px;
+}
+
 .card-container {
   position: absolute;
   width: 100vw;
@@ -48,4 +59,15 @@ body {
   max-width: 300px;
   line-height: 3rem;
   background-color: #fff;
+}
+
+.buttons {
+  width: 320px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.buttons .button {
+  margin: auto;
 }
