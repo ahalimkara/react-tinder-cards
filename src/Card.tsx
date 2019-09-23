@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 import { dislike, DISLIKE, like, LIKE, RESET, resetChoice } from './redux/actions';
 import { LastChoiceState } from './redux/reducers';
+import { CARDS_LENGTH } from './App';
 
 const DISLIKE_DIR = -1;
 const LIKE_DIR = 1;
@@ -23,9 +24,9 @@ interface Props {
 
 const to = (i: number) => ({
   x: 0,
-  y: Math.min(i * -20, -60) + 80,
+  y: Math.min(50, (CARDS_LENGTH - i - 1) * 25),
   rot: 0,
-  scale: 1,
+  scale: 1 - Math.min(0.1, (CARDS_LENGTH - i - 1) * 0.05),
   delay: 100 * i - 100,
   opacity: 1,
   likeOpacity: 0,
@@ -80,9 +81,9 @@ const flyOut = (
 const reset = (set: Function, index: number) => {
   set(() => ({
     x: 0,
-    y: Math.min(index * -20, -60) + 80,
+    y: Math.min(50, (CARDS_LENGTH - index - 1) * 25),
     rot: 0,
-    scale: 1,
+    scale: 1 - Math.min(0.1, (CARDS_LENGTH - index - 1) * 0.05),
     delay: 200 * index,
     opacity: 1,
     likeOpacity: 0,

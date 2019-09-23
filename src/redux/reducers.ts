@@ -1,7 +1,7 @@
-import { LIKE, DISLIKE, LikeDislikeAction, ChoiceActionType, RESET } from './actions';
+import { ChoiceActionType, DISLIKE, LIKE, LikeDislikeAction, RESET } from './actions';
 
 import { combineReducers } from 'redux';
-import { cards } from '../App';
+import { CARDS_LENGTH } from '../App';
 
 export interface LastChoiceState {
   type: ChoiceActionType | null,
@@ -10,7 +10,7 @@ export interface LastChoiceState {
 
 const initialState: LastChoiceState = {
   type: null,
-  currentCardIndex: cards.length,
+  currentCardIndex: CARDS_LENGTH,
 };
 
 const lastChoice = (state = initialState, action: LikeDislikeAction): LastChoiceState => {

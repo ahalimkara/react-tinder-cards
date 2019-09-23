@@ -8,13 +8,14 @@ import logo from './logo.png';
 import Button from './Button';
 import { DISLIKE, LIKE, RESET } from './redux/actions';
 
-export const cards = [
+const cards = [
   require('./cards/Humphrey-Bogart.jpg'),
   require('./cards/Laraine-Day.jpg'),
   require('./cards/Joe-E.-Brown.jpg'),
   require('./cards/Patricia-Ellis.jpg'),
   require('./cards/Marlon-Brando.jpg'),
 ];
+export const CARDS_LENGTH = cards.length;
 
 const App: FunctionComponent = () => (
   <div>
