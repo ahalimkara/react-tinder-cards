@@ -1,13 +1,14 @@
 import React, { FunctionComponent } from 'react';
-import { faCheckCircle, faTimesCircle } from '@fortawesome/free-regular-svg-icons';
+import { faCheckCircle, faTimesCircle, faPlayCircle } from '@fortawesome/free-regular-svg-icons';
 
+import './App.css';
 import Card from './Card';
 import logo from './logo.png';
 
-import './App.css';
 import Button from './Button';
+import { DISLIKE, LIKE, RESET } from './redux/actions';
 
-const cards = [
+export const cards = [
   require('./cards/Humphrey-Bogart.jpg'),
   require('./cards/Laraine-Day.jpg'),
   require('./cards/Joe-E.-Brown.jpg'),
@@ -22,8 +23,9 @@ const App: FunctionComponent = () => (
       {cards.map((image, index) => <Card key={index} index={index} image={image} />)}
     </div>
     <div className="buttons">
-      <Button icon={faTimesCircle} color="#e95c56" />
-      <Button icon={faCheckCircle} color="#8ed97c" />
+      <Button icon={faTimesCircle} type={DISLIKE} />
+      <Button icon={faPlayCircle} type={RESET} />
+      <Button icon={faCheckCircle} type={LIKE} />
     </div>
   </div>
 );
