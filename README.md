@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React Tinder Cards Swipe
+Demo: [https://tinder.now.sh/](https://tinder.now.sh)
 
 ## Available Scripts
 
